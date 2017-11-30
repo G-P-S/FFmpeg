@@ -544,7 +544,8 @@ static int dxva2_device_create(AVHWDeviceContext *ctx, const char *device,
         return AVERROR_UNKNOWN;
     }
 
-    if (dxva2_device_create9ex(ctx, adapter) < 0) {
+    //if (dxva2_device_create9ex(ctx, adapter) < 0) {
+	{
         // Retry with "classic" d3d9
         err = dxva2_device_create9(ctx, adapter);
         if (err < 0)
